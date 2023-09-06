@@ -1,0 +1,28 @@
+<form [formGroup]="form">
+<p-toolbar>
+    <div class="p-toolbar-group-start">
+      <p-dropdown
+        [options]="languageOptions"
+        formControlName="language"
+        placeholder="{{ 'navbar.form.language' | translate }}"
+      >
+        <ng-template pTemplate="selectedItem">
+          <div class="flex align-items-center gap-2" *ngIf="form.controls.language.value">
+            <img src="{{ 'assets/img/' + form.controls.language.value + '_flag.svg' }}" style="width: 18px" />
+            <div>{{ 'navbar.languageOptions.' + form.controls.language.value | translate }}</div>
+          </div>
+        </ng-template>
+        <ng-template let-lang pTemplate="item">
+          <div class="flex align-items-center gap-2">
+            <img src="{{ 'assets/img/' + lang + '_flag.svg' }}" style="width: 18px" />
+            <div>{{ 'navbar.languageOptions.' + lang | translate }}</div>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+    <div class="p-toolbar-group-end">
+      <label for="darkModeSwitch" class="mr-2 text-color-secondary">{{ 'navbar.' + style | translate }}</label>
+      <p-inputSwitch inputId="darkModeSwitch" formControlName="darkMode"></p-inputSwitch>
+    </div>
+  </p-toolbar>
+</form>

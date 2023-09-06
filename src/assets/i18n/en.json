@@ -1,0 +1,14 @@
+{
+  "navbar":{
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "languages": "Languages",
+    "languageOptions": {
+      "pt-br": "Brazilian portuguese",
+      "en": "English"
+    },
+    "form": {
+      "language": "Language"
+    }
+  }
+}
